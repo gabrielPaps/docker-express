@@ -4,14 +4,18 @@ networks:
     external: true
     name: net-docker-express
 services:
-  main:
+  d-e_web:
+    build: .
+    ports:
+      - "3000:8080"
+  d-e_main:
     build:
-      context: ./dist
-    container_name: main
-    hostname: main
-    domainname: main
+      context: ./
+    container_name: d-e_main
+    # hostname: main
+    # domainname: main
     restart: unless-stopped
-    # env_file: ./config.env
+    env_file: ./config.env
     networks:
       - net-docker-express
 

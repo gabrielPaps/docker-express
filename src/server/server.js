@@ -1,15 +1,15 @@
 import express from "express";
 import routes from './routes/index.js'
 const app = express()
-const port = 3000
+
+const PORT = process.env.PORT | 3000
+const HOST = process.env.HOST | 'error'
 
 
 app.use('/', routes)
 
 export default function server(){
-    return app.listen(port, () => {
-        console.log(`Example app listening on port ${port}`)
-      })
+    return app.listen(PORT, HOST, () => { console.log(`On ${HOST}:${PORT}`)  })
 }
 
 
