@@ -7,7 +7,7 @@ services:
   d-e_web:
     build: .
     ports:
-      - "3000:8080"
+      - "3000:3000"
   d-e_main:
     build:
       context: ./
